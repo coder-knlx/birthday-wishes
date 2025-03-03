@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎂</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: skyblue;">
+    <h1>🎉 Happy Birthday! 🎂</h1>
+    <h2>Wishing You a Day Full of Joy & Fun! 🎁🎈</h2>
+
+    <!-- Fireworks Canvas -->
+    <canvas id="fireworks"></canvas>
+
+    <!-- Firecracker Sound -->
+    <audio id="firecracker-sound">
+        <source src="firecracker.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="fireworks.js"></script>
+    <button onclick="playFirecrackerSound()">😘😘Click ME😘😘</button>
+    <script>
+        function playFirecrackerSound() {
+            const sound = document.getElementById("firecracker-sound");
+            const newSound = sound.cloneNode(); // Allows multiple overlapping sounds
+            newSound.volume = 0.7;
+            newSound.play().catch(error => console.log("Autoplay blocked: Click to play sound"));
+        }
+    
+        document.addEventListener("click", playFirecrackerSound);
+    </script>
+</body>
+</html>
